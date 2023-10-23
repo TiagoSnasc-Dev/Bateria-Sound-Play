@@ -38,3 +38,13 @@ function playComposition(songArray) {
         wait += 250;
     }
 }
+
+const keys = document.querySelectorAll(".key");
+keys.forEach(key => {
+    key.addEventListener("touchstart", (event) => {
+        // Evita que o evento seja disparado mais de uma vez se houver múltiplos toques
+        event.preventDefault();
+        // Pega o valor do atributo data-key e toca o som
+        playSound(key.dataset.key);
+    });
+});
