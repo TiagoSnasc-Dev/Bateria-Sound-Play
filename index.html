@@ -8,38 +8,165 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Bateria</h1>
+    <section id="bateria">
+        <h1>Bateria</h1>
 
-    <div class="keys">
-        <div data-key="keyq" class="key">Q</div>
-        <div data-key="keyw" class="key">W</div>
-        <div data-key="keye" class="key">E</div>
+        <div class="keys">
+            <div data-key="keyq" class="key">Q</div>
+            <div data-key="keyw" class="key">W</div>
+            <div data-key="keye" class="key">E</div>
 
-        <div data-key="keya" class="key">A</div>
-        <div data-key="keys" class="key">S</div>
-        <div data-key="keyd" class="key">D</div>
+            <div data-key="keya" class="key">A</div>
+            <div data-key="keys" class="key">S</div>
+            <div data-key="keyd" class="key">D</div>
 
-        <div data-key="keyz" class="key">Z</div>
-        <div data-key="keyx" class="key">X</div>
-        <div data-key="keyc" class="key">C</div>
-    </div>
-    <div class="composer">
-        <input type="text" id="input" placeholder="Faça uma composição..." />
-        <button>Tocar</button>
-    </div>
+            <div data-key="keyz" class="key">Z</div>
+            <div data-key="keyx" class="key">X</div>
+            <div data-key="keyc" class="key">C</div>
+        </div>
+        <div class="composer">
+            <input type="text" id="input" placeholder="Faça uma composição..." />
+            <button>Tocar</button>
+        </div>
 
-    <footer>Projeto-Bateria-Soud-Play</footer>
+        <footer>Projeto Bateria-Sound-Play</footer>
+        <audio id="s_keyq" src="sounds/keyq.wav"></audio>
+        <audio id="s_keyw" src="sounds/keyw.wav"></audio>
+        <audio id="s_keye" src="sounds/keye.wav"></audio>
+        <audio id="s_keya" src="sounds/keya.wav"></audio>
+        <audio id="s_keys" src="sounds/keys.wav"></audio>
+        <audio id="s_keyd" src="sounds/keyd.wav"></audio>
+        <audio id="s_keyz" src="sounds/keyz.wav"></audio>
+        <audio id="s_keyx" src="sounds/keyx.wav"></audio>
+        <audio id="s_keyc" src="sounds/keyc.wav"></audio>
+    </section>
+    <section id="relogio">
+        <h1>Relógio Analógico</h1>
 
-    <audio id="s_keyq" src="sounds/keyq.wav"></audio>
-    <audio id="s_keyw" src="sounds/keyw.wav"></audio>
-    <audio id="s_keye" src="sounds/keye.wav"></audio>
-    <audio id="s_keya" src="sounds/keya.wav"></audio>
-    <audio id="s_keys" src="sounds/keys.wav"></audio>
-    <audio id="s_keyd" src="sounds/keyd.wav"></audio>
-    <audio id="s_keyz" src="sounds/keyz.wav"></audio>
-    <audio id="s_keyx" src="sounds/keyx.wav"></audio>
-    <audio id="s_keyc" src="sounds/keyc.wav"></audio>
+        <div class="relogio">
+            <div class="riscos">
+                <div class="risco" style="transform: rotate(0deg)"><div class="ponto"></div></div>
+                <div class="risco" style="transform: rotate(30deg)"><div class="ponto"></div></div>
+                <div class="risco" style="transform: rotate(60deg)"><div class="ponto"></div></div>
+                <div class="risco" style="transform: rotate(90deg)"><div class="ponto"></div></div>
+                <div class="risco" style="transform: rotate(120deg)"><div class="ponto"></div></div>
+                <div class="risco" style="transform: rotate(150deg)"><div class="ponto"></div></div>
+                <div class="risco" style="transform: rotate(180deg)"><div class="ponto"></div></div>
+                <div class="risco" style="transform: rotate(210deg)"><div class="ponto"></div></div>
+                <div class="risco" style="transform: rotate(240deg)"><div class="ponto"></div></div>
+                <div class="risco" style="transform: rotate(270deg)"><div class="ponto"></div></div>
+                <div class="risco" style="transform: rotate(300deg)"><div class="ponto"></div></div>
+                <div class="risco" style="transform: rotate(330deg)"><div class="ponto"></div></div>
+            </div>
+            <div class="ponteiros">
+                <div class="p p_s"></div>
+                <div class="p p_m"></div>
+                <div class="p p_h"></div>
+                <div class="encaixe"></div>
+            </div>
+        </div>
+        <div class="digital">--:--:--</div>
+
+        <footer>Projeto Relógio Analógico</footer>
+    </section>
+    <section id="clima">
+        <h1>Clima</h1>
+
+        <form class="busca">
+            <input type="search" id="searchInput" />
+            <button>Buscar</button>
+        </form>
     
+        <div class="resultado">
+            <div class="titulo">--</div>
+    
+            <div class="info">
+                <div class="temp">
+                    <div class="tempTitulo">Temperatura</div>
+                    <div class="tempInfo">-- <sup>ºC</sup></div>
+                    <img src="http://openweathermap.org/img/wn/10d@2x.png" />
+                </div>
+                <div class="vento">
+                    <div class="ventoTitulo">Vento</div>
+                    <div class="ventoInfo">-- <span>km/h</span></div>
+                    <div class="ventoArea">
+                        <div class="ventoPonto" style="transform: rotate(0deg)"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="aviso"></div>
+    
+        <footer>Projeto Clima</footer>
+    </section>
+    <section id="jogo-da-velha">
+        <h1>Jogo da velha</h1>
+
+    <div class="area">
+        <div data-item="a1" class="item b r"></div>
+        <div data-item="a2" class="item b r"></div>
+        <div data-item="a3" class="item b"></div>
+
+        <div data-item="b1" class="item b r"></div>
+        <div data-item="b2" class="item b r"></div>
+        <div data-item="b3" class="item b"></div>
+
+        <div data-item="c1" class="item r"></div>
+        <div data-item="c2" class="item r"></div>
+        <div data-item="c3" class="item"></div>
+    </div>
+
+    <div class="info">
+        <div class="infoitem">
+            <div class="infotitulo">A vez é:</div>
+            <div class="infocorpo vez">--</div>
+        </div>
+        <div class="infoitem">
+            <div class="infotitulo">Vencedor:</div>
+            <div class="infocorpo resultado-velha">--</div>
+        </div>
+    </div>
+
+    <button class="reset">Resetar</button>
+    </section>
+    <section id="canvas">
+        <h1>Desenhando no Canvas</h1>
+
+        <canvas id="tela" width="500" height="300"></canvas>
+    
+        <div class="colorArea">
+            <div data-color="black" style="background-color: black" class="color active"></div>
+            <div data-color="blue" style="background-color: blue" class="color"></div>
+            <div data-color="red" style="background-color: red" class="color"></div>
+            <div data-color="green" style="background-color: green" class="color"></div>
+            <div data-color="yellow" style="background-color: yellow" class="color"></div>
+            <div data-color="gray" style="background-color: gray" class="color"></div>
+        </div>
+    
+        <button class="clear">Limpar Quadro</button>
+    </section>
+    <section id="quiz">
+        <h1>Quiz</h1>
+        <div class="progress">
+            <div class="progress--bar"></div>
+        </div>
+        <div class="questionArea">
+            <div class="question">...</div>
+            <div class="options">
+                
+            </div>
+        </div>
+    
+        <div class="scoreArea">
+            <img src="prize.png" class="prizeImage" />
+            <div class="scoreText1">Parabéns!</div>
+            <div class="scorePct">Acertou 99%</div>
+            <div class="scoreText2">Você respondeu 9 questões e acertou 8.</div>
+            <button>Fazer novamente</button>
+        </div>
+    </section>
+    <script src="questions.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
