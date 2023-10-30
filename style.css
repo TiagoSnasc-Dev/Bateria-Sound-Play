@@ -4,23 +4,53 @@
     box-sizing: border-box;
 }
 body {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #333;
+    gap: 40px;
     min-height: 100vh;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    background-color: #333;
+    flex-direction: row;
     font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
 }
 
-h1 {
+ h1 {
     color: #FFF;
     margin-bottom: 20px;
+    padding: 20px;
 }
+
+footer {
+    margin-top: 20px;
+    color: #FFF;
+    font-size: 13px;
+}
+#clima,
+#relogio,
+#bateria,
+#jogo-da-velha,
+#canvas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#clima:hover,
+#canvas:hover {
+    border: 2px solid #FF0;
+}
+
+/* BATERIA */
 .keys {
     display: grid;
+    width: 300px;
+    height: 300px;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    align-items: center;
+    justify-items: center;
 }
 .key {
     width: 80px;
@@ -37,7 +67,9 @@ h1 {
     border: 2px solid #FF0;
     color: #FF0;
 }
-
+#bateria:hover {
+    border: 2px solid #FF0;
+}
 .composer {
     width: 260px;
     margin-top: 20px;
@@ -62,8 +94,497 @@ h1 {
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+/* RELOGIO*/
+#relogio:hover {
+    border: 2px solid #FF0;
+}
+.relogio {
+    width: 300px;
+    height: 300px;
+    border: 5px solid #FFF;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.riscos {
+    width: 100%;
+    height: 100%;
+    padding-left: 50%;
+    padding-top: 50%;
+    margin-top: -3px;
+}
+.risco {
+    width: 145px;
+    height: 5px;
+    position: absolute;
+    transform-origin: left;
+    display: flex;
+    justify-content: flex-end;
+}
+.risco .ponto {
+    width: 15px;
+    height: 100%;
+    background-color: #FFF;
+}
+
+.ponteiros {
+    width: 100%;
+    height: 100%;
+    padding-left: 50%;
+    padding-top: 50%;
+    margin-top: -100%;
+}
+.p {
+    transform-origin: left;
+    transform: rotate(0deg);
+    border-radius: 50%;
+    position: absolute;
+}
+
+.p_s {
+    width: 100px;
+    height: 3px;
+    background-color: #F00;
+}
+.p_m {
+    width: 120px;
+    height: 7px;
+    background-color: #FFF;
+}
+.p_h {
+    width: 70px;
+    height: 10px;
+    background-color: #FFF;
+}
+.encaixe {
+    width: 20px;
+    height: 20px;
+    background-color: #FFF;
+    border-radius: 50%;
+    position: absolute;
+    margin-top: -5px;
+    margin-left: -5px;
+}
+.digital {
+    color: #FFF;
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+
+/* Projeto Clima */
+.busca {
+    display: flex;
+    width: 300px;
+}
+.busca #searchInput {
+    flex: 1;
+    padding: 10px;
+    outline: none;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 0;
+}
+.busca button {
+    padding: 10px;
+    font-size: 15px;
+    border: 0;
+    background-color: #555;
+    color: #FFF;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.busca button:hover {
+    background-color: #444;
+}
+
+.resultado {
+    width: 300px;
+    display: none;
+    border: 1px dotted #FFF;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.titulo {
+    width: 100%;
+    color: #FFF;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+}
+
+.info {
+    display: flex;
+    width: 100%;
+}
+.info .temp {
+    flex: 1;
+    text-align: center;
+}
+.info .vento {
+    flex: 1;
+    text-align: center;
+}
+.tempTitulo,
+.ventoTitulo {
+    color: #777;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.tempInfo,
+.ventoInfo {
+    color: #FFF;
+    font-size: 30px;
+    font-weight: bold;
+}
+.tempInfo sup {
+    font-size: 15px;
+    font-weight: normal;
+}
+.ventoInfo span {
+    font-size: 15px;
+    font-weight: normal;
+}
+.ventoArea {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #FFF;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 20px;
+    padding-left: 25px;
+    padding-top: 25px;
+}
+.ventoPonto {
+    width: 15px;
+    height: 1px;
+    background-color: #FFF;
+    transform-origin: left;
+}
+
+.aviso {
+    color: #FFF;
+    padding-top: 20px;
+}
+
+
+/* JOGO DA VELHA */
+#jogo-da-velha:hover {
+    border: 2px solid #FF0;
+}
+.area {
+    width: 300px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 30px;
+}
+.area .item {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-weight: bold;
+    color: #FFF;
+    cursor: pointer;
+}
+.item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.item.t {
+    border-top: 1px solid #FFF;
+}
+.item.l {
+    border-left: 1px solid #FFF;
+}
+.item.r {
+    border-right: 1px solid #FFF;
+}
+.item.b {
+    border-bottom: 1px solid #FFF;
+}
+
+.info {
+    width: 300px;
+    display: flex;
+    margin-top: 30px;
+    border: 1px dotted #FFF;
+    padding: 10px;
+}
+.infoitem {
+    flex: 1;
+}
+.infotitulo {
+    text-align: center;
+    color: #FFF;
+    margin-bottom: 10px;
+}
+.infocorpo {
+    text-align: center;
+    color: #FFF;
+    font-size: 20px;
+}
+
+.reset {
+    border: 1px solid #000;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #FFF;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.area {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+
+.item {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    position: relative;
+}
+/* Representação geral da linha */
+.area::before {
+    content: '';
+    position: absolute;
+    background-color: red;
+    transition: 0.3s;
+    z-index: 1;
+}
+
+/* Linhas horizontais */
+.area.winner-horizontal-top::before {
+    top: 16.666%;
+    left: 0;
+    right: 0;
+    height: 2px;
+}
+
+.area.winner-horizontal-middle::before {
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+}
+
+.area.winner-horizontal-bottom::before {
+    bottom: 16.666%;
+    left: 0;
+    right: 0;
+    height: 2px;
+}
+
+/* Linhas verticais */
+.area.winner-vertical-left::before {
+    top: 0;
+    bottom: 0;
+    left: 16.666%;
+    width: 2px;
+}
+
+.area.winner-vertical-center::before {
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+}
+
+.area.winner-vertical-right::before {
+    top: 0;
+    bottom: 0;
+    right: 16.666%;
+    width: 2px;
+}
+
+/* Diagonais */
+.area.winner-diagonal-rtl::before {
+    top: 0%;
+    left: 30%;
+    width: 141%; /* sqrt(2) * 100% */
+    height: 2px;
+    transform-origin: 50% 50%;
+    transform: rotate(-45deg) translateX(-50%);
+}
+
+.area.winner-diagonal-ltr::before {
+    top: 100%;
+    left: 30%;
+    width: 141%; /* sqrt(2) * 100% */
+    height: 2px;
+    transform-origin: 50% 50%;
+    transform: rotate(45deg) translateX(-50%);
+}
+
+
+
+/* PROJETO CANVAS */
+
+#tela {
+    border: 2px solid #000;
+    background-color: #FFF;
+    cursor: crosshair;
+}
+
+.colorArea {
+    width: 500px;
+    display: flex;
+}
+.color {
+    flex: 1;
+    height: 40px;
+    cursor: pointer;
+}
+.color.active {
+    border: 5px solid #FFF;
+}
+
+.clear {
+    border: 1px solid #000;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #FFF;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
 footer {
     margin-top: 20px;
     color: #FFF;
     font-size: 13px;
+}
+
+
+
+/* Projeto QUIZ */
+
+.progress {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    min-height: 4vh;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px 20px 0px;
+}
+.progress--bar {
+    background-color: #00FF00;
+    height: 100%;
+    transition: all ease .5s;
+    border-radius: 3px;
+}
+
+.questionArea,
+.scoreArea {
+    display: none;
+}
+
+.questionArea {
+    max-width: 500px;
+    width: 100%;
+}
+
+.question {
+    color: #FFF;
+    font-size: 18px;
+    margin: 20px 0;
+}
+.option {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin-bottom: 5px;
+    color: #AAA;
+    font-size: 16px;
+    cursor: pointer;
+}
+.option span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    margin-left: 5px;
+    margin-right: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #555;
+}
+.option:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.scoreArea {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 20px;
+    margin: 10px;
+    text-align: center;
+}
+.prizeImage {
+    width: auto;
+    height: 100px;
+    margin-bottom: 10px;
+}
+.scoreText1 {
+    color: #000;
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.scorePct {
+    color: #0d630d;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.scoreText2 {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.scoreArea button {
+    border: 0;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #CCC;
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.scoreArea button:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* CSS para iPhones */
+@media only screen and (max-width: 428px) {
+    body {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 10px;
+    }
+}
+
+/* CSS para Tablets */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    body {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 15px;
+    }
 }
